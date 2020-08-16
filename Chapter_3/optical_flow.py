@@ -36,6 +36,9 @@ for i in range(len(ps)):
 
 cv2.imwrite('picture/after.png', img_now)
 
+#LK(Lucas-Kanade)法を用いた
+#これは、移動前と移動後の輝度値が変化していないことが前提
+#フレーム内のある領域を切り出し、次フレームでも切り出し、領域の周辺及び最小二乗法で評価
 #np.emptyを使うことでnp.zerosやnp.onesよりも高速
 #np.empty(0, 2)の使い方は、配列を結合したいが、最終的に得られる配列のサイズがわからない場合や、計算規模が小さくプログラムの可読性を重視したい場合に使用される
 #vstack(vertical stack)配列の左側が異なる時、使用できる
